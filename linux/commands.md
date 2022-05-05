@@ -8,6 +8,8 @@ cat file.txt
 echo > file.txt
 ```
 
+# rm
+- `rm *.pdf`
 # file permissions
 
 - use a + or - (plus or minus sign) to add or remove permissions for a file respectively. Use an equals sign =, to
