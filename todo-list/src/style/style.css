@@ -1,0 +1,129 @@
+html,
+body {
+	font-size: 14px;
+	background: rgb(231, 229, 229);
+	margin: 0;
+	font-family: Roboto, sans-serif;
+}
+
+textarea {
+	width: 100%;
+	resize: none;
+	height: 100px;
+	box-sizing: border-box;
+	border: 1px solid rgb(190, 190, 190);
+	padding: 5px;
+	border-radius: 4px;
+	margin-bottom: 20px;
+}
+
+input {
+	border: none;
+	outline: none;
+}
+
+input[type="checkbox"] {
+	display: none;
+}
+
+input:not([readonly]) {
+	border: 1px solid #40C245;
+	outline: none;
+	padding: 10px 15px;
+	border-radius: 10px;
+}
+
+label {
+	height: 15px;
+	width: 15px;
+	background-image: url("../assets/icons/eclipse.svg");
+	cursor: pointer;
+	transition: 0.3s linear;
+}
+
+label:hover {
+	background-image: url("../assets/icons/check.svg");
+}
+
+.todo__container {
+	display: flex;
+	flex-direction: column;
+	max-width: 600px;
+	margin: 0 auto;
+	min-height: 500px;
+	padding: 2rem;
+	background: #fff;
+
+}
+
+.empty-list {
+	padding: 10px 0;
+}
+
+.todo__row {
+	display: grid;
+	grid-template-columns: 30px auto minmax(auto, 130px) 80px;
+	border-bottom: 1px solid rgb(190, 190, 190);
+	padding: 10px 0;
+	align-items: center;
+}
+
+.todo__row.disabled {
+	grid-template-columns: auto 80px;
+}
+
+.todo__row.disabled .todo__tools,
+.todo__row.disabled label,
+.todo__row.disabled .todo__date,
+.todo__done-list input,
+.todo__done-list img:first-child,
+.todo__done-list .todo__button--save {
+	display: none;
+}
+
+.todo__row.disabled .todo__button--save {
+	display: initial;
+}
+
+.todo__tools {
+	text-align: end;
+	cursor: pointer;
+}
+
+.todo__tools>img {
+	margin-left: 10px;
+}
+
+.todo__button--save {
+	text-align: center;
+	color: #1C5AD2;
+	font-weight: 700;
+	margin-left: 10px;
+	display: none;
+	cursor: pointer;
+}
+
+.todo__button--add {
+	outline: none;
+	border: none;
+	background: red;
+	padding: 10px 20px;
+	color: #fff;
+	border-radius: 4px;
+	transition: 0.3s linear;
+	cursor: pointer;
+}
+
+.todo__button--add:hover {
+	transform: scale(1.1);
+}
+
+
+.todo__done-list .todo__row {
+	grid-template-columns: auto 18px;
+	padding-left: 30px;
+}
+
+.todo__done-list span {
+	text-decoration: line-through;
+}
