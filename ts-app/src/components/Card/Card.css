@@ -1,7 +1,7 @@
 .card {
     border: 1px dashed gray;
     margin-bottom: .5rem;
-    background-color: white;
+    background-color: #f2e9e4;
     cursor: move;
     width: 200px;
     position: relative;

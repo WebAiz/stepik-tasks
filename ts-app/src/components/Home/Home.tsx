@@ -1,12 +1,8 @@
 import update from 'immutability-helper';
 import type {FC} from 'react';
 import {useCallback, useState} from 'react';
-import Column from './Column';
-
-const style = {
-  display: 'flex',
-  width: '100%',
-};
+import Column from '../Column';
+import './Home.css'
 
 export interface ColumnItem {
   id: number;
@@ -17,7 +13,7 @@ export interface ContainerState {
   columns: ColumnItem[];
 }
 
-export const Container: FC = () => {
+export const Home: FC = () => {
   const [columns, setColumns] = useState([
     {
       id: 1,
@@ -61,7 +57,7 @@ export const Container: FC = () => {
 
   return (
     <>
-      <div style={style}>{columns.map((col, i) => renderColumn(col, i))}</div>
+      <div className={'home'}>{columns.map((col, i) => renderColumn(col, i))}</div>
     </>
   );
 };

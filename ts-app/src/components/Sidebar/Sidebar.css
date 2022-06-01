@@ -1,0 +1,14 @@
+.sidebar {
+    width: 200px;
+    height: 100%;
+    position: sticky;
+    background: #22223b;
+    padding: 10px;
+}
+.sidebar .nav{
+    background: #4a4e69;
+    width: 100%;
+    display: flex;
+    padding: 0 5px;
+    margin: 10px 0;
+}

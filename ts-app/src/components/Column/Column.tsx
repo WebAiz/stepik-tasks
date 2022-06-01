@@ -4,9 +4,9 @@ import React, {useCallback, useRef, useState} from 'react';
 import {useDrag, useDrop} from 'react-dnd';
 import './Column.css';
 
-import {ItemTypes} from '../ItemTypes';
+import {ItemTypes} from '../../@types/ItemTypes';
 import update from 'immutability-helper';
-import {Card} from '../Card';
+import {Card} from '../Card/Card';
 
 export interface ColumnProps {
   id: any;
