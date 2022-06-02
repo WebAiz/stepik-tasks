@@ -1,8 +1,11 @@
 import update from 'immutability-helper';
 import type {FC} from 'react';
 import {useCallback, useState} from 'react';
+import {DndProvider} from 'react-dnd';
+import {HTML5Backend} from 'react-dnd-html5-backend';
 import Column from '../Column';
-import './Home.css'
+import Sidebar from '../Sidebar';
+import './Home.css';
 
 export interface ColumnItem {
   id: number;
@@ -36,12 +39,12 @@ export const Home: FC = () => {
           [dragIndex, 1],
           [hoverIndex, 0, prevColumns[dragIndex] as ColumnItem],
         ],
-      }),
+      })
     );
   }, []);
 
   const renderColumn = useCallback(
-    (column: { id: number; title: string }, index: number) => {
+    (column: {id: number; title: string}, index: number) => {
       return (
         <Column
           key={column.id}
@@ -52,12 +55,17 @@ export const Home: FC = () => {
         />
       );
     },
-    [],
+    []
   );
 
   return (
-    <>
-      <div className={'home'}>{columns.map((col, i) => renderColumn(col, i))}</div>
-    </>
+    <div className='container'>
+      <Sidebar />
+      <DndProvider backend={HTML5Backend}>
+        <div className={'home'}>
+          {columns.map((col, i) => renderColumn(col, i))}
+        </div>
+      </DndProvider>
+    </div>
   );
 };

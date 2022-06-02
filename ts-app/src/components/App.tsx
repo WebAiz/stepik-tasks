@@ -1,18 +1,18 @@
 import React from 'react';
-import {HTML5Backend} from 'react-dnd-html5-backend';
-import DragAndDrop from './Home';
-import {DndProvider} from 'react-dnd';
-import Sidebar from './Sidebar';
+import {Route, Routes} from 'react-router-dom';
+import Board from './Board';
+import Home from './Home';
+import SimpleCard from './SimpleCard';
 
 function App() {
   return (
-    <div className="App">
-      <div className="container">
-        <Sidebar />
-        <DndProvider backend={HTML5Backend}>
-          <DragAndDrop />
-        </DndProvider>
-      </div>
+    <div className='App'>
+      <Routes>
+        <Route path='/' element={<Board />} />
+        <Route path='/:cardNumber' element={<SimpleCard />} />
+        <Route path='/new' element={<SimpleCard />} />
+        <Route path='home' element={<Home />} />
+      </Routes>
     </div>
   );
 }

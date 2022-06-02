@@ -16,9 +16,12 @@ code {
     min-height: 100vh;
     display: flex;
     position: relative;
-    background: #9a8c98;
 }
 
 .container {
     display: flex;
+}
+
+input {
+    width: 100%;
 }
